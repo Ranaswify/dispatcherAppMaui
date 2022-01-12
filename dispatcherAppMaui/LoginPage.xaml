@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dispatcherAppMaui.LoginPage" 
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout GridLayout.Row="0">
+                <Label Text="Username"/>
+                <Entry Text="{Binding UserNameText}" Keyboard="Numeric" ReturnType="Next"/>
+            </StackLayout>
+            <StackLayout GridLayout.Row="1">
+                <Label Text="Password"/>
+                <Entry Text="{Binding PasswordEntryText}" IsPassword="True" ReturnCommand="{Binding LoginCommand}"/>
+            </StackLayout>
+
+            <Button GridLayout.Row="2" Text="Login" Command="{Binding LoginCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
